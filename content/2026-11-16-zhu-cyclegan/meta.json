@@ -1,0 +1,14 @@
+{
+  "title": "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks",
+  "title_zh": "以循環一致性對抗網路實現非成對影像轉換",
+  "short_name": "CycleGAN",
+  "authors": ["Jun-Yan Zhu", "Taesung Park", "Phillip Isola", "Alexei A. Efros"],
+  "venue": "ICCV",
+  "year": 2017,
+  "report_date": "2026-11-16",
+  "presenter": "○○○",
+  "tags": ["GAN", "影像轉換"],
+  "paper_url": "https://arxiv.org/abs/1703.10593",
+  "cover": "fig/fig03.png",
+  "status": "draft"
+}

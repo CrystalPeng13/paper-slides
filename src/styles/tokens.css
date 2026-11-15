@@ -1,0 +1,91 @@
+/*
+ * 設計變數（CLAUDE.md §13）。全站唯一可以寫色碼、字型、動態曲線的地方。
+ * 視覺風格：溫潤紙本 × 編輯期刊 —— 米白紙張、墨色文字、赤陶色點綴、超大襯線標題、細線網格。
+ */
+:root {
+  /* 紙張與墨色 */
+  --bg: #f2eee5;
+  --bg-2: #e9e4d8;
+  --surface: #faf8f2;
+  --ink: #1b1a17;
+  --ink-2: #55534d;
+  --ink-3: #8a877f;
+  --line: #d5cfc1;
+  --line-strong: #1b1a17;
+  /* 赤陶色（唯一強調色） */
+  --accent: #a33f1f;
+  --accent-ink: #7a2d15;
+  --accent-soft: #f3e2d8;
+  --on-accent: #faf8f2;
+  /* 論文原圖一律放在白底上（不隨深色模式變化） */
+  --figure-bg: #ffffff;
+  /* 狀態 */
+  --ok: #3b6d11;
+  --ok-soft: #e4eed6;
+  --warn: #8a5208;
+  --warn-soft: #f6e7cc;
+
+  /* 字型：全中文介面，數字與後設資料用等寬字 */
+  --font-display: 'Noto Serif TC', 'PMingLiU', serif;
+  --font-body: 'Noto Sans TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Noto Sans TC', ui-monospace, monospace;
+  --font-heading: var(--font-display); /* 投影片樣式沿用的別名 */
+
+  /* 字級（流體） */
+  --fs-hero: clamp(56px, 10.5vw, 196px);
+  --fs-display: clamp(40px, 6.4vw, 112px);
+  --fs-h1: clamp(36px, 4vw, 64px);
+  --fs-h2: clamp(26px, 2.4vw, 38px);
+  --fs-lead: clamp(18px, 1.35vw, 22px);
+  --fs-body: 17px;
+  --fs-small: 14px;
+  --fs-meta: 12px;
+
+  /* 版面 */
+  --gutter: clamp(20px, 3.6vw, 56px);
+  --header-h: 72px;
+  --radius: 4px;
+  --measure: 68ch;
+
+  /* 動態 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur: 0.6s;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #161513;
+  --bg-2: #1d1c19;
+  --surface: #22211e;
+  --ink: #efebe2;
+  --ink-2: #b3afa5;
+  --ink-3: #7f7b72;
+  --line: #34322d;
+  --line-strong: #efebe2;
+  --accent: #e3875f;
+  --accent-ink: #f0a584;
+  --accent-soft: #3a251b;
+  --on-accent: #161513;
+  --ok: #9ccb62;
+  --ok-soft: #26330f;
+  --warn: #efa43a;
+  --warn-soft: #3a2a10;
+  color-scheme: dark;
+}
+
+/* 投影片固定使用淺色紙本配色（§13.3），不受深色模式影響 */
+.reveal-paper,
+.slides-page,
+.demo-deck,
+html.slides-mode {
+  --s-bg: #f2eee5;
+  --s-ink: #1b1a17;
+  --s-ink-2: #55534d;
+  --s-ink-3: #8a877f;
+  --s-line: #d5cfc1;
+  --s-accent: #a33f1f;
+  --s-accent-soft: #f3e2d8;
+  --s-surface: #faf8f2;
+}

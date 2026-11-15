@@ -1,0 +1,458 @@
+/*
+ * 投影片樣式與頁面類型（CLAUDE.md §6、§13.4）。
+ * 設計尺寸 1280 × 720，reveal.js 會等比例縮放。
+ * 新增頁面類型時，要同步更新 CLAUDE.md §6、src/lib/rules.ts 與 templates/slide-types.md。
+ */
+.reveal.reveal-paper {
+  background: var(--s-bg);
+  color: var(--s-ink);
+  font-family: var(--font-body);
+  font-size: 26px;
+  line-height: 1.6;
+}
+.reveal.reveal-paper .slides {
+  text-align: left;
+}
+.reveal.reveal-paper .slides > section {
+  height: 100%;
+  padding: 0;
+  text-align: left;
+}
+/* 每頁內容包在 .slide-inner 中排版，避免干擾 reveal.js 對 section 的顯示控制 */
+.reveal.reveal-paper .slide-inner {
+  height: 100%;
+  padding: 92px 80px 64px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ---------- 共用文字 ---------- */
+.reveal.reveal-paper h1,
+.reveal.reveal-paper h2,
+.reveal.reveal-paper h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--s-ink);
+  line-height: 1.35;
+  margin: 0;
+}
+.reveal.reveal-paper h1 {
+  font-size: 46px;
+}
+.reveal.reveal-paper h2 {
+  font-size: 40px;
+  margin-bottom: 28px;
+}
+.reveal.reveal-paper h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: var(--s-accent);
+}
+.reveal.reveal-paper p {
+  margin: 0 0 16px;
+}
+.reveal.reveal-paper ul,
+.reveal.reveal-paper ol {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.reveal.reveal-paper li {
+  margin: 0 0 12px;
+}
+.reveal.reveal-paper li::marker {
+  color: var(--s-accent);
+}
+.reveal.reveal-paper li > ul {
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: var(--s-ink-2);
+}
+.reveal.reveal-paper strong {
+  color: var(--s-accent);
+  font-weight: 500;
+}
+.reveal.reveal-paper a {
+  color: var(--s-accent);
+}
+.reveal.reveal-paper code {
+  background: var(--s-accent-soft);
+  color: var(--s-ink);
+  font-size: 0.85em;
+}
+.reveal.reveal-paper .source {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--s-ink-3);
+  margin: 12px 0 0;
+}
+.reveal.reveal-paper img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------- 固定元素：章節標示、頁碼、進度條 ---------- */
+.reveal.reveal-paper .slide-label {
+  position: absolute;
+  top: 34px;
+  left: 80px;
+  right: 80px;
+  font-size: 17px;
+  color: var(--s-accent);
+  letter-spacing: 0.06em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--s-line);
+}
+.reveal.reveal-paper .slide-number {
+  background: transparent;
+  color: var(--s-ink-3);
+  font-family: var(--font-body);
+  font-size: 15px;
+  right: 24px;
+  bottom: 18px;
+}
+.reveal.reveal-paper .progress {
+  height: 4px;
+  color: var(--s-accent);
+  background: var(--s-line);
+}
+
+/* ---------- 表格（info、table 共用） ---------- */
+.reveal.reveal-paper table {
+  border-collapse: collapse;
+  font-size: 22px;
+  margin: 0 auto;
+  min-width: 60%;
+  background: var(--s-surface);
+}
+.reveal.reveal-paper th,
+.reveal.reveal-paper td {
+  border-bottom: 1px solid var(--s-line);
+  padding: 10px 20px;
+  text-align: left;
+}
+.reveal.reveal-paper th {
+  font-weight: 500;
+  color: var(--s-ink-2);
+  border-bottom: 2px solid var(--s-ink-3);
+}
+
+/* ---------- cover（期刊封面式） ---------- */
+.reveal.reveal-paper section.cover .slide-inner {
+  justify-content: flex-end;
+  padding: 72px 96px 80px;
+}
+.reveal.reveal-paper section.cover .slide-inner::before {
+  content: '碩班論文報告　·　PAPER READING';
+  position: absolute;
+  top: 56px;
+  left: 96px;
+  right: 96px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--s-ink);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  color: var(--s-ink-2);
+}
+.reveal.reveal-paper section.cover .slide-inner::after {
+  content: '';
+  position: absolute;
+  top: 120px;
+  right: 96px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid var(--s-accent);
+}
+.reveal.reveal-paper section.cover h1 {
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  max-width: 1000px;
+  margin-bottom: 22px;
+}
+.reveal.reveal-paper section.cover .subtitle {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  color: var(--s-accent);
+  margin-bottom: 44px;
+}
+.reveal.reveal-paper section.cover .meta {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--s-ink-2);
+  padding-top: 18px;
+  border-top: 1px solid var(--s-line);
+  margin: 0;
+}
+
+/* ---------- info ---------- */
+.reveal.reveal-paper section.info table {
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+}
+.reveal.reveal-paper section.info thead {
+  display: none;
+}
+.reveal.reveal-paper section.info td:first-child {
+  width: 140px;
+  color: var(--s-accent);
+  white-space: nowrap;
+}
+
+/* ---------- section（大號鏤空數字） ---------- */
+.reveal.reveal-paper section.section .slide-inner {
+  justify-content: center;
+  padding: 80px 110px;
+}
+.reveal.reveal-paper section.section .section-no {
+  font-family: var(--font-heading);
+  font-size: 220px;
+  font-weight: 900;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--s-accent);
+  margin: 0 0 28px;
+}
+.reveal.reveal-paper section.section h2 {
+  font-size: 72px;
+  font-weight: 900;
+  margin: 0;
+  padding-top: 24px;
+  border-top: 2px solid var(--s-ink);
+}
+
+/* ---------- figure ---------- */
+.reveal.reveal-paper section.figure h2 {
+  margin-bottom: 18px;
+}
+.reveal.reveal-paper section.figure img {
+  max-height: 440px;
+  object-fit: contain;
+  background: var(--figure-bg);
+  border: 1px solid var(--s-line);
+  padding: 10px;
+}
+.reveal.reveal-paper section.figure .source {
+  text-align: center;
+}
+
+/* ---------- table ---------- */
+.reveal.reveal-paper section.table .source {
+  text-align: center;
+}
+
+/* ---------- equation ---------- */
+.reveal.reveal-paper section.equation .katex-display {
+  font-size: 1.25em;
+  background: var(--s-surface);
+  border: 1px solid var(--s-line);
+  padding: 20px;
+  margin: 0 0 24px;
+}
+.reveal.reveal-paper section.equation ul {
+  font-size: 23px;
+}
+
+/* ---------- compare / todo ---------- */
+.reveal.reveal-paper .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+.reveal.reveal-paper .cols > div {
+  background: var(--s-surface);
+  border: 1px solid var(--s-line);
+  border-top: 3px solid var(--s-accent);
+  padding: 22px 26px;
+}
+.reveal.reveal-paper .cols > div:first-child {
+  border-top-color: var(--s-ink-3);
+}
+.reveal.reveal-paper .cols > div:first-child h3 {
+  color: var(--s-ink-2);
+}
+
+/* ---------- takeaway ---------- */
+.reveal.reveal-paper section.takeaway .slide-inner {
+  justify-content: center;
+  text-align: center;
+}
+.reveal.reveal-paper section.takeaway h2 {
+  font-size: 26px;
+  color: var(--s-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+}
+.reveal.reveal-paper section.takeaway .big {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.5;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.reveal.reveal-paper section.takeaway ol,
+.reveal.reveal-paper section.takeaway ul {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------- todo（個人評論） ---------- */
+.reveal.reveal-paper section.todo .cols > div,
+.reveal.reveal-paper section.todo > div > ul {
+  border-style: dashed;
+}
+.reveal.reveal-paper section.todo .cols {
+  margin-bottom: 24px;
+}
+.reveal.reveal-paper section.todo li {
+  color: var(--s-ink-3);
+}
+
+/* ---------- qa ---------- */
+.reveal.reveal-paper section.qa .slide-inner {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.reveal.reveal-paper section.qa h1 {
+  font-size: 96px;
+  letter-spacing: 0.08em;
+}
+.reveal.reveal-paper section.qa .subtitle {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  color: var(--s-ink-2);
+  margin-top: 16px;
+}
+
+/* ---------- refs ---------- */
+.reveal.reveal-paper section.refs ol {
+  font-size: 19px;
+  line-height: 1.55;
+}
+.reveal.reveal-paper section.refs li {
+  margin-bottom: 10px;
+}
+
+/* ---------- 列印／匯出 PDF ---------- */
+html.print-pdf .reveal.reveal-paper .slide-inner {
+  height: 720px;
+}
+html.print-pdf .slides-page {
+  overflow-x: hidden;
+}
+
+/* ---------- 投影片播放頁外框 ---------- */
+html.slides-mode,
+html.slides-mode body {
+  overflow: hidden;
+  height: 100%;
+  background: var(--s-bg);
+}
+html.slides-mode.print-pdf,
+html.slides-mode.print-pdf body {
+  overflow: visible;
+  height: auto;
+}
+.slides-page {
+  position: fixed;
+  inset: 0;
+}
+.slides-page.is-print {
+  position: static;
+}
+.slides-loading {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--ink-2);
+  background: var(--bg);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+}
+/* 頂端工具列：平常幾乎隱形，滑鼠靠近頂端時浮現，不干擾上台 */
+.slides-chrome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 14px 18px;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.slides-chrome:hover,
+.slides-chrome:focus-within {
+  opacity: 1;
+  transform: none;
+}
+.chrome-title {
+  margin-right: auto;
+  margin-left: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--s-ink);
+}
+.chrome-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--s-ink);
+  background: var(--s-surface);
+  color: var(--s-ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+.chrome-btn:hover {
+  background: var(--s-ink);
+  color: var(--s-surface);
+}
+.chrome-help {
+  position: absolute;
+  top: 58px;
+  right: 18px;
+  width: 340px;
+  background: var(--s-surface);
+  border: 1px solid var(--s-ink);
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 2.1;
+  color: var(--s-ink);
+}
+.chrome-help kbd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border: 1px solid var(--s-line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0 6px;
+  background: var(--figure-bg);
+}
+.chrome-help a {
+  color: var(--s-accent);
+}
+.chrome-help span {
+  color: var(--s-ink-3);
+  display: block;
+  line-height: 1.5;
+}

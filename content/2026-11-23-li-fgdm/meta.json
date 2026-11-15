@@ -1,0 +1,14 @@
+{
+  "title": "Zero-shot Medical Image Translation via Frequency-Guided Diffusion Models",
+  "title_zh": "以頻率引導擴散模型實現零樣本醫學影像轉換",
+  "short_name": "FGDM",
+  "authors": ["Yunxiang Li", "Hua-Chieh Shao", "Xiao Liang", "Liyuan Chen", "Ruiqi Li", "Steve Jiang", "Jing Wang", "You Zhang"],
+  "venue": "IEEE TMI",
+  "year": 2024,
+  "report_date": "2026-11-23",
+  "presenter": "○○○",
+  "tags": ["Diffusion", "醫學影像", "影像轉換"],
+  "paper_url": "https://arxiv.org/abs/2304.02742",
+  "cover": "fig/fig04.png",
+  "status": "done"
+}

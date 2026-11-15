@@ -1,0 +1,14 @@
+{
+  "title": "原文標題（大小寫照原文）",
+  "title_zh": "中文意譯標題",
+  "short_name": "論文簡稱（選填，例如模型名稱）",
+  "authors": ["第一作者", "第二作者"],
+  "venue": "期刊或會議簡稱",
+  "year": 2026,
+  "report_date": "2026-01-01",
+  "presenter": "○○○",
+  "tags": ["標籤"],
+  "paper_url": "https://arxiv.org/abs/xxxx.xxxxx",
+  "cover": "fig/fig01.png",
+  "status": "draft"
+}

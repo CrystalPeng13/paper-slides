@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+  <rect width="960" height="300" fill="#FBFAF6"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#993C1D"/>
+    </marker>
+  </defs>
+  <g stroke="#993C1D" stroke-width="2.5" marker-end="url(#a)">
+    <line x1="200" y1="150" x2="268" y2="150"/>
+    <line x1="440" y1="150" x2="508" y2="150"/>
+    <line x1="680" y1="150" x2="748" y2="150"/>
+  </g>
+  <g fill="#F4F1EA" stroke="#2C2C2A" stroke-width="2">
+    <rect x="40" y="95" width="160" height="110" rx="8"/>
+    <rect x="280" y="95" width="160" height="110" rx="8"/>
+    <rect x="520" y="95" width="160" height="110" rx="8"/>
+    <rect x="760" y="95" width="160" height="110" rx="8" stroke="#993C1D"/>
+  </g>
+  <g text-anchor="middle" fill="#2C2C2A">
+    <text x="120" y="145" font-size="26" font-weight="700">論文 PDF</text>
+    <text x="120" y="178" font-size="17" fill="#5F5E5A">papers/</text>
+    <text x="360" y="145" font-size="26" font-weight="700">閱讀筆記</text>
+    <text x="360" y="178" font-size="17" fill="#5F5E5A">brief.md</text>
+    <text x="600" y="145" font-size="26" font-weight="700">投影片</text>
+    <text x="600" y="178" font-size="17" fill="#5F5E5A">slides.md</text>
+    <text x="840" y="145" font-size="26" font-weight="700" fill="#993C1D">網站</text>
+    <text x="840" y="178" font-size="17" fill="#5F5E5A">npm run build</text>
+  </g>
+  <text x="480" y="260" text-anchor="middle" font-size="17" fill="#888780">每一步都由 CLAUDE.md 規範，並由 npm run check 自動檢查</text>
+</svg>
