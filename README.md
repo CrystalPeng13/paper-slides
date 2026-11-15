@@ -4,7 +4,7 @@
 
 給 AI 一篇論文 PDF，它會依照 [`CLAUDE.md`](CLAUDE.md) 的規範，產出**碩班論文報告投影片**與**閱讀筆記**，並呈現在網站上。重點不是做出某一份投影片，而是建立一套**可以反覆使用的規則**：每多一篇論文，就是照同一套流程再跑一次。
 
-- 網站：（上傳 GitHub Pages 後填入）
+- 網站：<https://crystalpeng13.github.io/paper-slides/>
 - 規範：[`CLAUDE.md`](CLAUDE.md)（其他 AI 工具的入口：[`AGENTS.md`](AGENTS.md)）
 
 ## 網站內容
